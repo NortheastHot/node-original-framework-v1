@@ -1,0 +1,20 @@
+{
+  "name": "node-original-framework-v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/www.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://NortheastHot@github.com/NortheastHot/node-original-framework-v1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NortheastHot/node-original-framework-v1/issues"
+  },
+  "homepage": "https://github.com/NortheastHot/node-original-framework-v1#readme"
+}
