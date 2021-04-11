@@ -1,3 +1,6 @@
+const {getList, newBlog} = require('../controller/blog')
+const {SuccessModel,ErrorModel} = require('../model/resModel')
+
 const handleBlogRouter = (req,res)=>{
     const method = req.method // 获取 get post
     const url = req.url
@@ -5,9 +8,10 @@ const handleBlogRouter = (req,res)=>{
     
     // 获取博客列表
     if(method === 'GET' && path === '/api/blog/list') {
-        return {
-            msg: '这是获取博客列表接口'
-        }
+        const author = req.query.author || ''
+        const keyword = req.query.keyword || ''
+        const listData = getList(author,keyword)
+        return new SuccessModel(listData)
     }
     // 获取博客详情
     if(method === 'GET' && path === '/api/blog/detaili') {
@@ -17,9 +21,8 @@ const handleBlogRouter = (req,res)=>{
     }
     // 获取新建博客
     if(method === 'POST' && path === '/api/blog/new') {
-        return {
-            msg: '这是新建博客接口'
-        }
+        const data = newBlog(req.body)
+        return new SuccessModel(data)
     }
     // 更新博客
     if(method === 'POST' && path === '/api/blog/update') {
